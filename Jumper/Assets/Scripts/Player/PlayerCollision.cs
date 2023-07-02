@@ -11,6 +11,7 @@ public class PlayerCollision : MonoBehaviour
         if (collisionInfo.collider.tag == "Obstacle") // If the player collides with an object with the tag "Obstacle"
         {
             movement.enabled = false; // Disable the PlayerMovement script
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 }

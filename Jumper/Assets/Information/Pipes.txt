@@ -2,5 +2,12 @@ Working Distances:
 
 Empty Object distance from bottom pipe is 1.75 (middle of the top and bottom pipes)
 
-Currently the best distance between top and bottom is 5.5 units
-Currently the best distance between two sets is 6 units horizontally
+Currently the best distance between top and bottom is a 1.75 y scaled cylinder (or 10 units)
+Currently the best distance between two sets is 5.5 units horizontally
+Max distance between pipe sets vertically is 5.3 units
+
+Max Pipe Set height: 8.5
+Min Pipe Set height: 3.2
+
+First position: 5, 3.2, 0
+Which is an offset from the player by: 9, 2.2, 0
