@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 123caa41e84e041d0bd65bb3ae888dd1, type: 2}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -197,11 +197,7 @@ GameObject:
   - component: {fileID: 326858850}
   - component: {fileID: 326858849}
   - component: {fileID: 326858848}
-  - component: {fileID: 326858845}
-  - component: {fileID: 326858853}
   - component: {fileID: 326858844}
-  - component: {fileID: 326858852}
-  - component: {fileID: 326858854}
   - component: {fileID: 326858855}
   m_Layer: 0
   m_Name: Player
@@ -237,19 +233,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &326858845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326858843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b4968989b1d8fd41814be664911e0e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 2058865077}
 --- !u!65 &326858848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -336,52 +319,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &326858852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326858843}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1a26d6aadbb58d4a8859c96b88c613c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 18
-  gravityBase: 30
-  gravityExpontent: 2
-  maxGravity: 70
---- !u!114 &326858853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326858843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 811a97eaaa263fd4a9d27f4366e0c5e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {fileID: 326858852}
---- !u!114 &326858854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326858843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e7ae4eba1983c342b5a811ad7980888, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRb: {fileID: 326858844}
-  jumpForce: 18
-  gravityBase: 30
-  gravityExpontent: 2
-  maxGravity: 70
 --- !u!82 &326858855
 AudioSource:
   m_ObjectHideFlags: 0
@@ -683,7 +620,6 @@ GameObject:
   - component: {fileID: 735502123}
   - component: {fileID: 735502122}
   - component: {fileID: 735502121}
-  - component: {fileID: 735502125}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Obstacle
@@ -777,27 +713,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &735502125
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735502120}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e8c7fab7f24ebe3489b79ec12b39f55f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &783714414
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,7 +784,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 947942684}
-  - component: {fileID: 947942685}
   m_Layer: 0
   m_Name: Pipe Spawner
   m_TagString: Untagged
@@ -898,27 +812,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &947942685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947942683}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b049cc0d88933d040a59d1e2f1ebb729, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 12044071}
-  - {fileID: 450415084}
-  - {fileID: 1661893834}
-  - {fileID: 174712973}
-  - {fileID: 783714415}
-  - {fileID: 878292678}
-  pipePrefab: {fileID: 3935000436399073760, guid: 99d05efd72b11e048a35e429eb15067a, type: 3}
-  timeBetweenWaves: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +944,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1736073117}
-  - component: {fileID: 1736073116}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1059,24 +951,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1736073116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1736073115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c58838c55e38b849a7ecd3f5c655bb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  restartDelay: 1
-  jump: {fileID: 0}
-  playerRb: {fileID: 0}
-  pipeMovement: {fileID: 2714046575691333596, guid: 99d05efd72b11e048a35e429eb15067a, type: 3}
-  pipeSpawner: {fileID: 0}
-  autoJump: {fileID: 0}
 --- !u!4 &1736073117
 Transform:
   m_ObjectHideFlags: 0
@@ -1206,7 +1080,6 @@ GameObject:
   - component: {fileID: 2058865076}
   - component: {fileID: 2058865079}
   - component: {fileID: 2058865078}
-  - component: {fileID: 2058865077}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1234,18 +1107,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 160}
   m_SizeDelta: {x: 257.7187, y: 89.9591}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2058865077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058865075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 711942c41f2c46442846cbd9a3427d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2058865078
 MonoBehaviour:
   m_ObjectHideFlags: 0
