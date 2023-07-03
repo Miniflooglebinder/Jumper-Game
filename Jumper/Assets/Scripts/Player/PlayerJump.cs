@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
+    public bool canJump = true; // Should be false later
+
     public float jumpForce = 18f;
     public float gravityBase = 30f;
     public float gravityExpontent = 2f;
@@ -21,7 +23,7 @@ public class Jump : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
             jump();
         }
