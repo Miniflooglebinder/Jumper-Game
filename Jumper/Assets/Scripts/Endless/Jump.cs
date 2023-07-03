@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    public float jumpForce = 22f;
+    public float jumpForce = 18f;
     public float gravityBase = 30f;
     public float gravityExpontent = 2f;
     public float maxGravity = 70f;
