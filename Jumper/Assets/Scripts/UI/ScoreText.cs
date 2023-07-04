@@ -12,21 +12,21 @@ public class ScoreText : MonoBehaviour
     private void Start()
     {
         highScoreText = GameObject.Find("Highscore").GetComponent<TextMeshProUGUI>();
-        highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        highScoreText.text = "Highscore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
 
         scoreText = GetComponent<TextMeshProUGUI>();
-        scoreText.text = score.ToString();
+        scoreText.text = "Score: " + score.ToString();
     }
 
     public void IncrementScore()
     {
         score++;
-        scoreText.text = score.ToString(); // Update the score text
+        scoreText.text = "Score: " + score.ToString(); // Update the score text
 
         if (score > PlayerPrefs.GetInt("HighScore", 0)) // If the current score is greater than the high score
         {
             PlayerPrefs.SetInt("HighScore", score); // Set the high score to the current score
-            highScoreText.text = score.ToString();
+            highScoreText.text = "Highscore: " + score.ToString();
         }
     }
 }

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public Jump jump; // Reference to the PlayerJump script
     public GroundStop groundStop; // Reference to the GroundStop script
     public TextMeshProUGUI highScoreText;
+    public TextMeshProUGUI scoreText;
 
     // Variables
     public bool hasStarted = false;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
         jump = FindObjectOfType<Jump>(); // Find the PlayerJump script
         groundStop = FindObjectOfType<GroundStop>(); // Find the GroundStop script
         highScoreText = GameObject.Find("Highscore").GetComponent<TextMeshProUGUI>();
+        scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
     }
 
     
@@ -27,6 +29,9 @@ public class GameManager : MonoBehaviour
     {
         jump.canJump = true;
         hasStarted = true;
+
+        highScoreText.enabled = false;
+        scoreText.enabled = true;
 
         FindObjectOfType<AudioManager>().Play("Start");
     }
@@ -49,6 +54,6 @@ public class GameManager : MonoBehaviour
     public void ResetHighScore() // Not in use yet
     {
         PlayerPrefs.DeleteKey("HighScore");
-        highScoreText.text = "0";
+        highScoreText.text = "Highscore: 0";
     }
 }
