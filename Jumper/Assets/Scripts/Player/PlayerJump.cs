@@ -52,6 +52,10 @@ public class Jump : MonoBehaviour
                 jump();
             }
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            gameManager.ResetHighScore();
+        }
     }
 
     void FixedUpdate()

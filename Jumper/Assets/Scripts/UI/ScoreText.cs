@@ -23,6 +23,10 @@ public class ScoreText : MonoBehaviour
         score++;
         scoreText.text = score.ToString(); // Update the score text
 
-        PlayerPrefs.SetInt("HighScore", score);
+        if (score > PlayerPrefs.GetInt("HighScore", 0)) // If the current score is greater than the high score
+        {
+            PlayerPrefs.SetInt("HighScore", score); // Set the high score to the current score
+            highScoreText.text = score.ToString();
+        }
     }
 }

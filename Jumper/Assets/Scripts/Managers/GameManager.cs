@@ -1,4 +1,6 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -6,6 +8,7 @@ public class GameManager : MonoBehaviour
     // References to Components
     public Jump jump; // Reference to the PlayerJump script
     public GroundStop groundStop; // Reference to the GroundStop script
+    public TextMeshProUGUI highScoreText;
 
     // Variables
     public bool hasStarted = false;
@@ -16,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         jump = FindObjectOfType<Jump>(); // Find the PlayerJump script
         groundStop = FindObjectOfType<GroundStop>(); // Find the GroundStop script
+        highScoreText = GameObject.Find("Highscore").GetComponent<TextMeshProUGUI>();
     }
 
     
@@ -40,5 +44,11 @@ public class GameManager : MonoBehaviour
     {
         // Restart the game after 2 seconds
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ResetHighScore() // Not in use yet
+    {
+        PlayerPrefs.DeleteKey("HighScore");
+        highScoreText.text = "0";
     }
 }
