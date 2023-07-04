@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     // References to Components
     public Jump jump; // Reference to the PlayerJump script
 
+    public bool hasStarted = false;
+
 
     // Start method that finds objects in the scene and assigns them to variables
     void Start()
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         jump.canJump = true;
+        hasStarted = true;
     }
 
     public void EndGame()
