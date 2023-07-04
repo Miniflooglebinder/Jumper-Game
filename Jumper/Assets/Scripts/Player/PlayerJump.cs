@@ -3,6 +3,7 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
     public bool canJump = true;
+    public bool hasStarted = false;
 
     public float jumpForce = 18f;
     public float gravityBase = 30f;
@@ -31,14 +32,27 @@ public class Jump : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && canJump)
+        if (hasStarted)
         {
-            jump();
+            if (Input.GetKeyDown(KeyCode.Space) && canJump)
+            {
+                jump();
+            }
         }
 
-        if (playerTR.position.y < 4f) // Idle animation placeholder
+        else if (!hasStarted)
         {
-            jump();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                hasStarted = true;
+                gameManager.StartGame();
+                jump(); // Prevents having to press space twice to jump when the game starts
+            }
+
+            else if (playerTR.position.y < 4f) // Idle jump before the game starts
+            {
+                jump();
+            }
         }
     }
 
