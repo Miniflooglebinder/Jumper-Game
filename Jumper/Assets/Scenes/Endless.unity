@@ -760,7 +760,13 @@ MonoBehaviour:
   sounds:
   - name: PlayerDeath
     clip: {fileID: 8300000, guid: 9f1b92f396fa48d45aac16a3c415de3d, type: 3}
-    volume: 0.5
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Start
+    clip: {fileID: 8300000, guid: 365c5f54863a9584497cb863817268bb, type: 3}
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}

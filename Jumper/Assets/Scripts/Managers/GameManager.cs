@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     {
         jump.canJump = true;
         hasStarted = true;
+
+        FindObjectOfType<AudioManager>().Play("Start");
     }
 
     public void EndGame()
