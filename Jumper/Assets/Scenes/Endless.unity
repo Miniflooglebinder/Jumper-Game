@@ -770,6 +770,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: HighScore
+    clip: {fileID: 8300000, guid: d758bf583e137f243b4676b231683d62, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &787442360
 Transform:
   m_ObjectHideFlags: 0
@@ -1436,3 +1442,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f481f22ed1ece83429da12ba4bc204ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeatenHighScore: 0
