@@ -7,8 +7,15 @@ public class PipeSpawner : MonoBehaviour
     public Transform[] spawnPoints; // array of spawn points
     public GameObject pipePrefab; // Pipe prefab reference
 
+    private GameManager gameManager;
+
     public float timeToSpawn = 2f;
-    public float timeBetweenSpawns = 1f;
+    public float timeBetweenSpawns = 1.5f;
+
+    void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     void SpawnPipe()
     {
@@ -18,10 +25,13 @@ public class PipeSpawner : MonoBehaviour
 
     void Update()
     {
-        if (Time.time >= timeToSpawn) // if time is greater than or equal to timeToSpawn
+        if (gameManager.hasStarted) // When the game has started
         {
-            SpawnPipe(); // spawn pipe
-            timeToSpawn = Time.time + timeBetweenSpawns; // set timeToSpawn to current time + timeBetweenSpawns
+            if (Time.time >= timeToSpawn) // if time is greater than or equal to timeToSpawn
+            {
+                SpawnPipe();
+                timeToSpawn = Time.time + timeBetweenSpawns; // set timeToSpawn to current time + timeBetweenSpawns
+            }
         }
     }
 }
