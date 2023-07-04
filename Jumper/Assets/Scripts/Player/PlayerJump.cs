@@ -2,23 +2,31 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    public bool canJump = true; // Should be false later
+    public bool canJump = true;
 
     public float jumpForce = 18f;
     public float gravityBase = 30f;
     public float gravityExpontent = 2f;
     public float maxGravity = 70f;
 
-    private Rigidbody rb;
+    private Rigidbody playerRB; // Reference to the Rigidbody component of the object this script is attached to (the player)
+    private Transform playerTR; // Reference to the Transform component of the object this script is attached to (the player)
+
+    private GameManager gameManager; // Reference to the GameManager script
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        playerRB = GetComponent<Rigidbody>();
+        gameManager = FindObjectOfType<GameManager>();
+        playerTR = GetComponent<Transform>();
+
+        //Q: Why do we use FindObjectOfType instead of GetComponent for the GameManager script?
+        //A: Because the GameManager script is attached to a different object than the player.
     }
 
     void jump()
     {
-        rb.velocity = Vector3.up * jumpForce;
+        playerRB.velocity = Vector3.up * jumpForce;
     }
 
     void Update()
@@ -27,12 +35,17 @@ public class Jump : MonoBehaviour
         {
             jump();
         }
+
+        if (playerTR.position.y < 4f) // Idle animation placeholder
+        {
+            jump();
+        }
     }
 
     void FixedUpdate()
     {
-        float gravity = gravityBase * Mathf.Pow(rb.velocity.y, gravityExpontent);
+        float gravity = gravityBase * Mathf.Pow(playerRB.velocity.y, gravityExpontent);
         gravity = Mathf.Clamp(gravity, 0f, maxGravity);
-        rb.AddForce(Vector3.down * gravity * rb.mass);
+        playerRB.AddForce(Vector3.down * gravity * playerRB.mass);
     }
 }

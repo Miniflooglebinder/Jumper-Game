@@ -14,9 +14,13 @@ public class GameManager : MonoBehaviour
     }
 
     
+    public void StartGame()
+    {
+        jump.canJump = true;
+    }
+
     public void EndGame()
     {
-        Debug.Log("Game Over");
         jump.canJump = false;
 
         Invoke("Restart", 2f); // Restart the game after 2 seconds
